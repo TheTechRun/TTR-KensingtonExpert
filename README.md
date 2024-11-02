@@ -9,6 +9,7 @@
 
 ## Install:
 ```
+mkdir -p ~/.scripts/
 cd ~/.scripts
 git clone https://github.com/TheTechRun/TTR-KensingtonExpert
 chmod +x ~/.scripts/TTR-KensingtonExpert/*.sh
