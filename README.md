@@ -49,19 +49,22 @@ bindsym Mod1+7 exec $HOME/.scripts/TTR-KensingtonExpert/launch.sh
 
 So here are some more permanent solutions:
 
-Bind it to a shortcut key
+Bind it to a shortcut key.
+
 Example for i3wm:
 ```
 bindsym Mod1+8 exec ~/.scripts/kensington/saved-mappings/lefty.sh
 ```
 
 Or have it startup with your Window Manager.
+
 Example for i3wm:
 ```
 exec_always --no-startup-id ~/.scripts/kensington/saved-mappings/lefty.sh
 ```
 
-Or add it to systemD timer.
+
+Add it to systemD timer.
 Example for NixOS in configuration.nix:
 ```
 # Kensington Expert
