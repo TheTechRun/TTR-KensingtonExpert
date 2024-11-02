@@ -42,29 +42,28 @@ bindsym Mod1+7 exec $HOME/.scripts/TTR-KensingtonExpert/launch.sh
 
 ```
 
-3. Optional: Your button mappings will reset to default after:
+3. (Optional): Your button mappings will reset to default after:
 - The computer restarts.
 - The mouse is disconnected and reconnected.
 - The system suspends/resumes a reboot or logout.
 
 So here are some more permanent solutions:
 
-Bind it to a shortcut key.
+a). Bind it to a shortcut key.
 
 Example for i3wm:
 ```
 bindsym Mod1+8 exec ~/.scripts/kensington/saved-mappings/lefty.sh
 ```
 
-Or have it startup with your Window Manager.
+b). Have it startup with your Window Manager.
 
 Example for i3wm:
 ```
 exec_always --no-startup-id ~/.scripts/kensington/saved-mappings/lefty.sh
 ```
 
-
-Add it to systemD timer.
+c). Add it to systemD timer.
 Example for NixOS in configuration.nix:
 ```
 # Kensington Expert
