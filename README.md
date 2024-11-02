@@ -20,7 +20,7 @@ chmod +x ~/.scripts/TTR-KensingtonExpert/*.sh
 ```
 ~/.scripts/TTR-KensingtonExpert/map-keys.sh
 ```
- Now and go through the prompts (pretty self-explanatory) and save your new mappings. Your new configuration will be saved in the `saved-mappings` directory.
+ Now and go through the prompts (pretty self-explanatory), name, and save your new mappings. Your new configuration will be saved in the `saved-mappings` directory.
 
 ### 2. You can either:
 
