@@ -2,12 +2,12 @@
 
 ## This is a script that will allow you to change the mappings on the Kensington Expert Wireless and allow vertical and horizontal scrolling with the trackball. You can then use rofi to switch configurations on the fly.
 
-# Dependencies:
+## Dependencies:
 `git`
 
 `rofi (OPTIONAL)`
 
-# Install:
+## Install:
 ```
 cd ~/.scripts
 git clone https://github.com/TheTechRun/TTR-KensingtonExpert
@@ -15,13 +15,13 @@ chmod +x ~/.scripts/TTR-KensingtonExpert/*.sh
 ```
 
 ## Instructions:
-1. Run the `map-keys.sh`
+### 1. Run the `map-keys.sh`
 ```
 ~/.scripts/TTR-KensingtonExpert/map-keys.sh
 ```
  Now and go through the prompts (pretty self-explanatory) and save your new mappings. Your new configuration will be saved in the `saved-mappings` directory.
 
-2. You can either:
+### 2. You can either:
 
 a): In terminal, run your new configuration script located in the `saved-mappings` directory.
 Example: 
@@ -42,28 +42,28 @@ bindsym Mod1+7 exec $HOME/.scripts/TTR-KensingtonExpert/launch.sh
 
 ```
 
-3. (Optional): Your button mappings will reset to default after:
+### 3. (Optional): Your button mappings will reset to default after:
 - The computer restarts.
 - The mouse is disconnected and reconnected.
 - The system suspends/resumes a reboot or logout.
 
 So here are some more permanent solutions:
 
-a). Bind it to a shortcut key.
+#### a). Bind it to a shortcut key.
 
 Example for i3wm:
 ```
 bindsym Mod1+8 exec ~/.scripts/kensington/saved-mappings/lefty.sh
 ```
 
-b). Have it startup with your Window Manager.
+#### b). Have it startup with your Window Manager.
 
 Example for i3wm:
 ```
 exec_always --no-startup-id ~/.scripts/kensington/saved-mappings/lefty.sh
 ```
 
-c). Add it to systemD timer.
+#### c). Add it to systemD timer.
 Example for NixOS in configuration.nix:
 ```
 # Kensington Expert
