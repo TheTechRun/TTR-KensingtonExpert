@@ -160,7 +160,7 @@ read -p "Enter a name for this configuration: " config_name
 config_name=$(echo "$config_name" | tr '[:upper:]' '[:lower:]' | tr ' ' '-')
 
 # Create the configuration script in the correct directory
-CONFIG_DIR="$HOME/.scripts/kensington/saved-mappings"
+CONFIG_DIR="$HOME/.scripts/TTR-KensingtonExpert/saved-mappings"
 mkdir -p "$CONFIG_DIR"
 CONFIG_SCRIPT="$CONFIG_DIR/$config_name.sh"
 
