@@ -80,4 +80,4 @@ Run this command to get your mouse name:
 ```
 xinput list | grep -i kensington
 ```
-Now in `map-keys.sh` replace "Kensington Expert Wireless TB Mouse" with the new output name.
+Now in `map-keys.sh` replace "Kensington Expert Wireless TB Mouse" with the right output name.
