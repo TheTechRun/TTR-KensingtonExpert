@@ -30,7 +30,7 @@ Example:
 bash ~/.scripts/TTR-KensingtonExpert/saved-mappings/righty.sh
 ```
 
-#### b). Launch via rofi script. This will list all of our configurations in the `saved-mappings` directory so that you can switch them on the fly.
+#### b). Launch via rofi script. This will list all of your configurations in the `saved-mappings` directory so that you can switch them on the fly.
 Example:
 ```
 bash ~/.scripts/TTR-KensingtonExpert/launch.sh
