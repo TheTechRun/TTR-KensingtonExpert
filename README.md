@@ -1,4 +1,4 @@
-# TTR Kensington
+# TTR Kensington.
 
 ## This is a script that will allow you to change the mappings on the Kensington Expert Wireless and allow vertical and horizontal scrolling with the trackball. You can then use rofi to switch configurations on the fly.
 
@@ -47,20 +47,21 @@ bindsym Mod1+7 exec $HOME/.scripts/TTR-KensingtonExpert/launch.sh
 - The mouse is disconnected and reconnected.
 - The system suspends/resumes a reboot or logout.
 
+So here are some more permanent solutions:
+
+Bind it to a shortcut key
 Example for i3wm:
 ```
 bindsym Mod1+8 exec ~/.scripts/kensington/saved-mappings/lefty.sh
 ```
 
 Or have it startup with your Window Manager.
-
 Example for i3wm:
 ```
 exec_always --no-startup-id ~/.scripts/kensington/saved-mappings/lefty.sh
 ```
 
 Or add it to systemD timer.
-
 Example for NixOS in configuration.nix:
 ```
 # Kensington Expert
