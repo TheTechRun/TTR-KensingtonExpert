@@ -16,7 +16,7 @@ git clone https://github.com/TheTechRun/TTR-KensingtonExpert
 ## Instructions:
 1. Run the `map-keys.sh`
 ```
-~/.scripts/kensington/map-keys.sh
+~/.scripts/TTR-KensingtonExpert/map-keys.sh
 ```
  Now and go through the prompts (pretty self-explanatory) and save your new mappings. Your new configuration will be saved in the `saved-mappings` directory.
 
@@ -24,19 +24,19 @@ git clone https://github.com/TheTechRun/TTR-KensingtonExpert
 a): In terminal, run your new configuration script located in the `saved-mappings` directory.
 Example: 
 ```
-bash ~/.scripts/kensington/saved-mappings/righty.sh
+bash ~/.scripts/TTR-KensingtonExpert/saved-mappings/righty.sh
 ```
 
 b). Launch via rofi script. This will list all of our configurations in the `saved-mappings` directory so that you can switch them on the fly.
 Example:
 ```
-bash ~/.scripts/kensington/launch.sh
+bash ~/.scripts/TTR-KensingtonExpert/launch.sh
 ```
 You can bind the `launch.sh` to a shortcut key. 
 
 Example for i3wm:
 ```
-bindsym Mod1+7 exec $HOME/.scripts/kensington/launch.sh
+bindsym Mod1+7 exec $HOME/.scripts/TTR-KensingtonExpert/launch.sh
 
 ```
 
@@ -60,11 +60,11 @@ Or add it to systemD timer.
 
 Example for NixOS in configuration.nix:
 ```
-# Kensington Exper
+# Kensington Expert
   systemd.user.services.enable-scroll = {
     description = "Remaps and enable scrolling with Kensington Expert button";
     wantedBy = [ "default.target" ];
-    script = "${pkgs.bash}/bin/bash ~/.scripts/kensington/saved-mappings/lefty.sh";
+    script = "${pkgs.bash}/bin/bash ~/.scripts/TTR-KensingtonExpert/saved-mappings/lefty.sh";
   };
 ```
 
