@@ -4,6 +4,7 @@
 
 # Dependencies:
 `git`
+
 `rofi (OPTIONAL)`
 
 # Install:
