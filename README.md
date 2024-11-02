@@ -47,7 +47,7 @@ bindsym Mod1+7 exec $HOME/.scripts/TTR-KensingtonExpert/launch.sh
 - The mouse is disconnected and reconnected.
 - The system suspends/resumes a reboot or logout.
 
-So here are some more permanent solutions:
+#### So here are some more permanent solutions:
 
 #### a). Bind it to a shortcut key.
 
