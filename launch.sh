@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Set the directory path
-script_dir="$HOME/.scripts/kensington/saved-mappings"
+script_dir="$HOME/.scripts/TTR-KensingtonExpert/saved-mappings"
 
 # Get the list of .sh files in the directory
 script_list=$(find "$script_dir" -maxdepth 1 -type f -name "*.sh" | while read file; do
