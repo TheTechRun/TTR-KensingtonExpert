@@ -14,8 +14,12 @@ This works on x11. I have never tried it on Wayland.
 ```
 mkdir -p ~/.scripts/
 cd ~/.scripts
+
+# Clone this repo
 git clone https://github.com/TheTechRun/TTR-KensingtonExpert
-chmod +x ~/.scripts/TTR-KensingtonExpert/*.sh
+
+# Make scripts executable
+find ~/.scripts/TTR-KensingtonExpert -type f -name "*.sh" -exec chmod +x {} +
 ```
 
 ## Instructions:
