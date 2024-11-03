@@ -12,13 +12,14 @@ This works on x11. I have never tried it on Wayland.
 
 ## Install:
 ```
+# Make .scripts directory if it doesn't already exist:
 mkdir -p ~/.scripts/
 cd ~/.scripts
 
-# Clone this repo
+# Clone this repo:
 git clone https://github.com/TheTechRun/TTR-KensingtonExpert
 
-# Make scripts executable
+# Make scripts executable:
 find ~/.scripts/TTR-KensingtonExpert -type f -name "*.sh" -exec chmod +x {} +
 ```
 
