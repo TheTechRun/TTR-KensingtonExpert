@@ -2,6 +2,9 @@
 
 ## This is a script that will allow you to change the mappings on the Kensington Expert Wireless and allow vertical and horizontal scrolling with the trackball. You can then use rofi to switch configurations on the fly.
 
+## Important:
+This works on x11. I have never tried it on Wayland.
+
 ## Dependencies:
 `git`
 
