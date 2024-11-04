@@ -202,26 +202,13 @@ xinput set-button-map "\$DEVICE" 1 2 3 4 5 6 7 8 9 10
 # Set rotation first
 xinput set-prop "\$DEVICE" "libinput Rotation Angle" 180
 
-# SWAP THE POSITIONS:
-# If user sets:                We map it to:
-# Top Left = 1                 Bottom Right = 1
-# Top Right = 3               Bottom Left = 3
-# Bottom Left = 8             Top Right = 8
-# Bottom Right = 2            Top Left = 2
+# Apply button mappings
 xinput set-button-map "\$DEVICE" $TOP_RIGHT_MAP $BOTTOM_RIGHT_MAP $TOP_LEFT_MAP 4 5 6 7 $BOTTOM_LEFT_MAP 9 10
 
 EOF
 
 # Add scroll configuration if enabled
 if [ "$SCROLL_BUTTON" -ne 0 ]; then
-    # Simple 180° flip for scroll button
-    case $SCROLL_BUTTON in
-        1) FLIPPED_SCROLL=8 ;; # Bottom Left → Top Right
-        2) FLIPPED_SCROLL=3 ;; # Top Left → Bottom Right
-        3) FLIPPED_SCROLL=2 ;; # Bottom Right → Top Left
-        8) FLIPPED_SCROLL=1 ;; # Top Right → Bottom Left
-    esac
-    
     cat >> "$CONFIG_SCRIPT" << EOF
 # Enable scrolling
 xinput set-prop "\$DEVICE" "libinput Scroll Method Enabled" 0, 0, 1
