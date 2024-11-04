@@ -2,9 +2,6 @@
 
 ## This is a script that will allow you to change the mappings on the Kensington Expert Wireless and allow vertical and horizontal scrolling with the trackball. You can then use rofi to switch configurations on the fly.
 
-## Important:
-This works on x11. I have never tried it on Wayland.
-
 ## Dependencies:
 `git`
 
@@ -12,15 +9,10 @@ This works on x11. I have never tried it on Wayland.
 
 ## Install:
 ```
-# Make .scripts directory if it doesn't already exist:
 mkdir -p ~/.scripts/
 cd ~/.scripts
-
-# Clone this repo:
 git clone https://github.com/TheTechRun/TTR-KensingtonExpert
-
-# Make scripts executable:
-find ~/.scripts/TTR-KensingtonExpert -type f -name "*.sh" -exec chmod +x {} +
+chmod +x ~/.scripts/TTR-KensingtonExpert/*.sh
 ```
 
 ## Instructions:
@@ -28,17 +20,17 @@ find ~/.scripts/TTR-KensingtonExpert -type f -name "*.sh" -exec chmod +x {} +
 ```
 ~/.scripts/TTR-KensingtonExpert/map-keys.sh
 ```
- Now and go through the prompts (pretty self-explanatory), name, and save your new mappings. Your new configuration will be saved in the `saved-mappings` directory.
+ Now and go through the prompts (pretty self-explanatory) and save your new mappings. Your new configuration will be saved in the `saved-mappings` directory.
 
 ### 2. You can either:
 
-#### a): In terminal, run your new configuration script located in the `saved-mappings` directory.
+a): In terminal, run your new configuration script located in the `saved-mappings` directory.
 Example: 
 ```
 bash ~/.scripts/TTR-KensingtonExpert/saved-mappings/righty.sh
 ```
 
-#### b). Launch via rofi script. This will list all of your configurations in the `saved-mappings` directory so that you can switch them on the fly.
+b). Launch via rofi script. This will list all of our configurations in the `saved-mappings` directory so that you can switch them on the fly.
 Example:
 ```
 bash ~/.scripts/TTR-KensingtonExpert/launch.sh
