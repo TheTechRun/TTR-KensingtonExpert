@@ -16,7 +16,7 @@ chmod +x ~/.scripts/TTR-KensingtonExpert/*.sh
 ```
 
 ## Instructions:
-### 1. Run the `map-keys.sh`
+### 1. Run the `map-keys.sh`and choose RIGHT-SIDE-UP or UPSIDE-MODE.
 ```
 ~/.scripts/TTR-KensingtonExpert/map-keys.sh
 ```
