@@ -163,7 +163,8 @@ if [ -f "$CONFIG_SCRIPT" ]; then
     fi
 fi
 
-# Simple 180° flip for scroll button
+# Simple 180° flip for buttons:
+# Each button's function moves to the button directly opposite when rotated 180°
 if [ "$SCROLL_BUTTON" -ne 0 ]; then
     case $SCROLL_BUTTON in
         1) FLIPPED_SCROLL=8 ;; # Bottom Left → Top Right
@@ -172,6 +173,13 @@ if [ "$SCROLL_BUTTON" -ne 0 ]; then
         8) FLIPPED_SCROLL=1 ;; # Top Right → Bottom Left
     esac
 fi
+
+# Take the output mappings and do a pure 180° rotation
+# Each function moves to the button directly opposite
+FLIPPED_TOP_LEFT=$BOTTOM_RIGHT_MAP     # Top Left gets Bottom Right's function
+FLIPPED_TOP_RIGHT=$BOTTOM_LEFT_MAP     # Top Right gets Bottom Left's function
+FLIPPED_BOTTOM_LEFT=$TOP_RIGHT_MAP     # Bottom Left gets Top Right's function
+FLIPPED_BOTTOM_RIGHT=$TOP_LEFT_MAP     # Bottom Right gets Top Left's function
 
 
 # Create configuration script
@@ -194,21 +202,33 @@ xinput set-button-map "\$DEVICE" 1 2 3 4 5 6 7 8 9 10
 # Set rotation first
 xinput set-prop "\$DEVICE" "libinput Rotation Angle" 180
 
-# Apply button mapping for upside down orientation
-xinput set-button-map "\$DEVICE" $TOP_RIGHT_MAP $TOP_LEFT_MAP $BOTTOM_RIGHT_MAP 4 5 6 7 $BOTTOM_LEFT_MAP 9 10
+# SWAP THE POSITIONS:
+# If user sets:                We map it to:
+# Top Left = 1                 Bottom Right = 1
+# Top Right = 3               Bottom Left = 3
+# Bottom Left = 8             Top Right = 8
+# Bottom Right = 2            Top Left = 2
+xinput set-button-map "\$DEVICE" $TOP_RIGHT_MAP $BOTTOM_RIGHT_MAP $TOP_LEFT_MAP 4 5 6 7 $BOTTOM_LEFT_MAP 9 10
 
 EOF
 
 # Add scroll configuration if enabled
-if [ "$FLIPPED_SCROLL" -ne 0 ]; then
+if [ "$SCROLL_BUTTON" -ne 0 ]; then
+    # Simple 180° flip for scroll button
+    case $SCROLL_BUTTON in
+        1) FLIPPED_SCROLL=8 ;; # Bottom Left → Top Right
+        2) FLIPPED_SCROLL=3 ;; # Top Left → Bottom Right
+        3) FLIPPED_SCROLL=2 ;; # Bottom Right → Top Left
+        8) FLIPPED_SCROLL=1 ;; # Top Right → Bottom Left
+    esac
+    
     cat >> "$CONFIG_SCRIPT" << EOF
-# Enable scrolling with proper orientation
+# Enable scrolling
 xinput set-prop "\$DEVICE" "libinput Scroll Method Enabled" 0, 0, 1
 xinput set-prop "\$DEVICE" "libinput Button Scrolling Button" $FLIPPED_SCROLL
 xinput set-prop "\$DEVICE" "libinput Horizontal Scroll Enabled" 1
 EOF
 fi
-
 
 # Ensure the directories have correct permissions
 chmod 755 "$HOME/.scripts/TTR-KensingtonExpert"
