@@ -174,7 +174,6 @@ if [ -f "$CONFIG_SCRIPT" ]; then
 fi
 
 cat > "$CONFIG_SCRIPT" << EOF
-
 # Device name
 DEVICE="Kensington Expert Wireless TB Mouse"
 
@@ -191,11 +190,17 @@ xinput set-button-map "$DEVICE" 1 2 3 4 5 6 7 8 9 10
 # Apply button mapping
 xinput set-button-map "$DEVICE" 8 1 2 4 5 6 7 3 9 10
 
-# Enable scrolling
-xinput set-prop "$DEVICE" "libinput Scroll Method Enabled" 0, 0, 1
-xinput set-prop "$DEVICE" "libinput Button Scrolling Button" 3
-xinput set-prop "$DEVICE" "libinput Horizontal Scroll Enabled" 1
 EOF
+
+# Add scroll configuration if enabled
+if [ "$SCROLL_BUTTON" -ne 0 ]; then
+    cat >> "$CONFIG_SCRIPT" << EOF
+# Enable scrolling
+xinput set-prop "\$DEVICE" "libinput Scroll Method Enabled" 0, 0, 1
+xinput set-prop "\$DEVICE" "libinput Button Scrolling Button" $SCROLL_BUTTON
+xinput set-prop "\$DEVICE" "libinput Horizontal Scroll Enabled" 1
+EOF
+fi
 
 
 Ensure the directories have correct permissions
