@@ -188,7 +188,7 @@ xinput set-prop "$DEVICE" "libinput Rotation Angle" 0
 xinput set-button-map "$DEVICE" 1 2 3 4 5 6 7 8 9 10
 
 # Apply button mapping
-xinput set-button-map "$DEVICE" 8 1 2 4 5 6 7 3 9 10
+xinput set-button-map "\$DEVICE" $BOTTOM_LEFT_MAP $TOP_LEFT_MAP $BOTTOM_RIGHT_MAP 4 5 6 7 $TOP_RIGHT_MAP 9 10
 
 EOF
 
