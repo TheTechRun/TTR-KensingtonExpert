@@ -1,6 +1,6 @@
 # TTR Kensington.
 
-## This is a script that will allow you to change the mappings on the Kensington Expert Wireless and allow vertical and horizontal scrolling with the trackball. You can then use rofi to switch configurations on the fly. Upside down mode works as well.
+## This is a Linux bash script that will allow you to change the mappings on the Kensington Expert Wireless and allow vertical and horizontal scrolling with the trackball. You can then use rofi to switch configurations on the fly. Upside down mode works as well.
 
 ## Dependencies:
 `git`
@@ -20,7 +20,7 @@ chmod -R +x ~/.scripts/TTR-KensingtonExpert/
 ```
 ~/.scripts/TTR-KensingtonExpert/map-keys.sh
 ```
- Now and go through the prompts (pretty self-explanatory) and save your new mappings. Your new configuration will be saved in the `saved-mappings` directory.
+ Now go through the prompts (pretty self-explanatory) and save your new mappings. Your new configuration will be saved in the `saved-mappings` directory.
 
 ### 2. You can either:
 
